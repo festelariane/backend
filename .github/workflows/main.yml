@@ -1,0 +1,9 @@
+name: HappyTime Server Deployment
+on:
+  push:
+    branches: [main-editlater]
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Deploy using ssh
