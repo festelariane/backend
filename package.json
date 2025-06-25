@@ -1,0 +1,45 @@
+{
+  "name": "server",
+  "version": "0.1.0",
+  "private": true,
+  "description": "HappyTime application",
+  "scripts": {
+    "build": "strapi build",
+    "build:win": "cross-env NODE_ENV=production yarn build",
+    "deploy": "strapi deploy",
+    "develop": "strapi develop",
+    "start": "strapi start",
+    "start:win": "cross-env NODE_ENV=production yarn start",
+    "strapi": "strapi"
+  },
+  "dependencies": {
+    "@ckeditor/strapi-plugin-ckeditor": "^1.1.1",
+    "@strapi/plugin-cloud": "5.10.3",
+    "@strapi/plugin-users-permissions": "5.10.3",
+    "@strapi/strapi": "5.10.3",
+    "better-sqlite3": "11.3.0",
+    "cross-env": "^7.0.3",
+    "koa": "^3.0.0",
+    "mysql2": "^3.14.0",
+    "pg": "^8.14.1",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-router-dom": "^6.0.0",
+    "strapi-plugin-navigation": "^3.0.16",
+    "styled-components": "^6.0.0"
+  },
+  "devDependencies": {
+    "@types/koa": "^2.15.0",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "typescript": "^5"
+  },
+  "engines": {
+    "node": ">=18.0.0 <=22.x.x",
+    "npm": ">=6.0.0"
+  },
+  "strapi": {
+    "uuid": "f1710758-2610-4814-8b12-68a40c9c5846"
+  }
+}

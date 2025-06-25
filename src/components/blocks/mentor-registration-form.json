@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_blocks_mentor_registration_forms",
+  "info": {
+    "displayName": "Mentor Registration Form",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "headline": {
+      "type": "string"
+    },
+    "content": {
+      "type": "string"
+    },
+    "fullNamePlaceholder": {
+      "type": "string"
+    },
+    "emailPlaceholder": {
+      "type": "string"
+    },
+    "phonePlaceholder": {
+      "type": "string"
+    },
+    "descriptionPlaceholder": {
+      "type": "string"
+    },
+    "submitButtonText": {
+      "type": "string"
+    }
+  }
+}

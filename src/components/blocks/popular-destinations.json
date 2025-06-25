@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_blocks_popular_destinations",
+  "info": {
+    "displayName": "Popular Destinations"
+  },
+  "options": {},
+  "attributes": {
+    "headline": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "destinations": {
+      "displayName": "Article Card",
+      "type": "component",
+      "repeatable": true,
+      "component": "blocks.article-card"
+    }
+  }
+}

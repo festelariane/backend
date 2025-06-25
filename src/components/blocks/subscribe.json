@@ -1,0 +1,42 @@
+{
+  "collectionName": "components_blocks_subscribes",
+  "info": {
+    "displayName": "Subscribe"
+  },
+  "options": {},
+  "attributes": {
+    "headline": {
+      "type": "string"
+    },
+    "subheadline": {
+      "type": "string"
+    },
+    "usernamePlaceholder": {
+      "type": "string"
+    },
+    "yearPlaceholder": {
+      "type": "string"
+    },
+    "messageLabel": {
+      "type": "string"
+    },
+    "morningText": {
+      "type": "string"
+    },
+    "afternoonText": {
+      "type": "string"
+    },
+    "eveningText": {
+      "type": "string"
+    },
+    "otherText": {
+      "type": "string"
+    },
+    "subscribeButtonText": {
+      "type": "string"
+    },
+    "clearButtonText": {
+      "type": "string"
+    }
+  }
+}

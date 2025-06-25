@@ -1,0 +1,58 @@
+{
+  "kind": "singleType",
+  "collectionName": "globals",
+  "info": {
+    "singularName": "global",
+    "pluralName": "globals",
+    "displayName": "Global",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "footer": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.footer"
+    },
+    "email": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "facebookid": {
+      "type": "string"
+    },
+    "zaloid": {
+      "type": "string"
+    },
+    "logo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.logo"
+    },
+    "ads": {
+      "displayName": "Ad",
+      "type": "component",
+      "repeatable": true,
+      "component": "blocks.ad"
+    },
+    "blocks": {
+      "type": "dynamiczone",
+      "components": [
+        "blocks.mentor-registration-form"
+      ]
+    }
+  }
+}

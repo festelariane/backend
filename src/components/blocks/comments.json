@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_blocks_comments",
+  "info": {
+    "displayName": "Comments",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "headline": {
+      "type": "string"
+    },
+    "comments": {
+      "type": "component",
+      "repeatable": true,
+      "component": "common.comment-info"
+    }
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pages",
+  "info": {
+    "singularName": "page",
+    "pluralName": "pages",
+    "displayName": "Page",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "excerpt": {
+      "type": "text"
+    },
+    "blocks": {
+      "type": "dynamiczone",
+      "components": [
+        "blocks.info-block",
+        "blocks.hero-section",
+        "blocks.featured-article",
+        "blocks.content-block",
+        "blocks.common-card-list",
+        "blocks.html-content-block",
+        "blocks.mentor-registration-form",
+        "blocks.heading",
+        "blocks.full-image",
+        "blocks.embed-block",
+        "blocks.horizontal-ads",
+        "blocks.card-with-background-image",
+        "blocks.article-card",
+        "blocks.paragraph-with-image",
+        "blocks.paragraph"
+      ]
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "featuredImage": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.seo"
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::category.category",
+      "inversedBy": "pages"
+    },
+    "isTwoColumnLayout": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

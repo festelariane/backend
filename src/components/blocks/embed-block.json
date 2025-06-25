@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_blocks_embed_blocks",
+  "info": {
+    "displayName": "Embed Block"
+  },
+  "options": {},
+  "attributes": {
+    "embedCode": {
+      "type": "text"
+    },
+    "caption": {
+      "type": "string"
+    }
+  }
+}

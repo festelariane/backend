@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_blocks_common_card_lists",
+  "info": {
+    "displayName": "Common Card List",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "headline": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "blocks.article-card"
+    },
+    "itemWrapperClassNames": {
+      "type": "string",
+      "default": "col-lg-4 col-md-6 mb-4"
+    }
+  }
+}

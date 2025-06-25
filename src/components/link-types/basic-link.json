@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_link_types_basic_links",
+  "info": {
+    "displayName": "Basic Link",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "path": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_common_comment_infos",
+  "info": {
+    "displayName": "Comment Info"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "name": {
+      "type": "string"
+    },
+    "comment": {
+      "type": "text"
+    },
+    "slug": {
+      "type": "string"
+    }
+  }
+}

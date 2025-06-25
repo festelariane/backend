@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_blocks_horizontal_ads",
+  "info": {
+    "displayName": "Horizontal Ads",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "htmlContent": {
+      "type": "text"
+    }
+  }
+}

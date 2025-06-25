@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_blocks_scholarships",
+  "info": {
+    "displayName": "Scholarship"
+  },
+  "options": {},
+  "attributes": {
+    "headline": {
+      "type": "string"
+    },
+    "content": {
+      "type": "richtext"
+    },
+    "link": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.link"
+    }
+  }
+}

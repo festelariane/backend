@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_blocks_our_services",
+  "info": {
+    "displayName": "Our Services",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "headline": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "services": {
+      "type": "component",
+      "repeatable": true,
+      "component": "blocks.article-card"
+    }
+  }
+}

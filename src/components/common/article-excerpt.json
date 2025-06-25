@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_common_article_excerpts",
+  "info": {
+    "displayName": "Article Excerpt"
+  },
+  "options": {},
+  "attributes": {
+    "headline": {
+      "type": "string"
+    },
+    "excerpt": {
+      "type": "richtext"
+    },
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "link": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.link"
+    },
+    "updatedDate": {
+      "type": "date"
+    }
+  }
+}
