@@ -1,1 +1,53 @@
 
+name: Deploy to HappyTime Server
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build the project
+        run: npm run build
+
+      - name: Create .evn file
+        run: |
+          echo "# Server" >> .env
+          echo "HOST=0.0.0.0" >> .env
+          echo "PORT=${{ secrets.PORT }}" >> .env # Example of using a secret for PORT if it varies
+          echo "" >> .env
+
+          echo "# Secrets" >> .env
+          echo "APP_KEYS=${{ secrets.APP_KEYS }}" >> .env
+          echo "API_TOKEN_SALT=${{ secrets.API_TOKEN_SALT }}" >> .env
+          echo "ADMIN_JWT_SECRET=${{ secrets.ADMIN_JWT_SECRET }}" >> .env
+          echo "TRANSFER_TOKEN_SALT=${{ secrets.TRANSFER_TOKEN_SALT }}" >> .env
+          echo "" >> .env
+
+          echo "# Database" >> .env
+          echo "DATABASE_CLIENT=postgres" >> .env # Client type is usually not secret
+          echo "DATABASE_HOST=${{ secrets.DATABASE_HOST }}" >> .env # Database host might be sensitive or change per env
+          echo "DATABASE_PORT=${{ secrets.DATABASE_PORT }}" >> .env # Database port might be sensitive or change per env
+          echo "DATABASE_NAME=${{ secrets.DATABASE_NAME }}" >> .env # Database name might be sensitive or change per env
+          echo "DATABASE_USERNAME=${{ secrets.DATABASE_USERNAME }}" >> .env # Database username might be sensitive
+          echo "DATABASE_PASSWORD=${{ secrets.DATABASE_PASSWORD }}" >> .env
+          echo "DATABASE_SSL=false" >> .env # SSL config can be hardcoded or made a secret if it changes often
+          echo "DATABASE_SSL_REJECT_UNAUTHORIZED=false" >> .env # SSL config
+          echo "DATABASE_FILENAME=.tmp/data.db" >> .env # Filename is usually not secret
+          echo "JWT_SECRET=${{ secrets.JWT_SECRET }}" >> .env
+
+      - name: Deploy to HappyTime Server
+        run: |
+          pm2 stop all || true
+          pm2 start npm --name "happytime-server" -- run start
+          pm2 save
