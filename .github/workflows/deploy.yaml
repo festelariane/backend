@@ -24,13 +24,10 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Build the project
-        run: npm run build
-
       - name: Create .env file
         run: |
           echo "Current directory for .env creation: $(pwd)"
-          
+
           rm -f .env # Remove if it exists
           echo "# Server" >> .env
           echo "HOST=0.0.0.0" >> .env
@@ -64,6 +61,10 @@ jobs:
           ls -la .env # Check if .env exists
           cat .env # View contents for debugging (be careful with secrets in logs)
           
+      
+      - name: Build the project
+        run: npm run build
+        
       - name: Deploy to HappyTime Server
         run: |
           export HOME="${{ github.workspace }}" # Adjust HOME for PM2 relative to the app
