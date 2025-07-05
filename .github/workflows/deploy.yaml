@@ -13,8 +13,7 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-        with:
-          path: happytime-backend
+
       - name: Print workspace
         run: |
           echo "GITHUB_WORKSPACE (shell variable): $GITHUB_WORKSPACE"
@@ -56,8 +55,7 @@ jobs:
 
       - name: Deploy to HappyTime Server
         run: |
-          export HOME="${{ github.workspace }}/happytime-backend" # Adjust HOME for PM2 relative to the app
+          export HOME="${{ github.workspace }}" # Adjust HOME for PM2 relative to the app
           pm2 stop all || true
           pm2 start npm --name "happytime-server" -- run start
           pm2 save
-        working-directory: happytime-backend
