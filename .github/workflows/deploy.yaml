@@ -67,7 +67,7 @@ jobs:
 
       - name: Deploy to HappyTime Server
         run: |
-          export PM2_HOME="${{ github.workspace }}" # Adjust HOME for PM2 relative to the app
+          export PM2_HOME="${{ github.workspace }}/.pm2" # Adjust HOME for PM2 relative to the app
           
           # Check if happytimebackend exists before stopping
           if pm2 describe happytimebackend &>/dev/null; then
