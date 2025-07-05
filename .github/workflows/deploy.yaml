@@ -27,8 +27,11 @@ jobs:
       - name: Build the project
         run: npm run build
 
-      - name: Create .evn file
+      - name: Create .env file
         run: |
+          echo "Current directory for .env creation: $(pwd)"
+          
+          rm -f .env # Remove if it exists
           echo "# Server" >> .env
           echo "HOST=0.0.0.0" >> .env
           echo "PORT=${{ secrets.PORT }}" >> .env # Example of using a secret for PORT if it varies
@@ -53,6 +56,14 @@ jobs:
           echo "DATABASE_FILENAME=.tmp/data.db" >> .env # Filename is usually not secret
           echo "JWT_SECRET=${{ secrets.JWT_SECRET }}" >> .env
 
+      - name: Verify .env file location
+        run: |
+          echo "Current working directory:"
+          pwd
+          echo "Contents of current directory after .env creation:"
+          ls -la .env # Check if .env exists
+          cat .env # View contents for debugging (be careful with secrets in logs)
+          
       - name: Deploy to HappyTime Server
         run: |
           export HOME="${{ github.workspace }}" # Adjust HOME for PM2 relative to the app
