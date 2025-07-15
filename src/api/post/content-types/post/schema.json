@@ -10,6 +10,7 @@
   "options": {
     "draftAndPublish": true
   },
+  "pluginOptions": {},
   "attributes": {
     "title": {
       "type": "string"
@@ -48,7 +49,7 @@
       "target": "api::post.post",
       "mappedBy": "relatedPosts"
     },
-    "contentBlocks": {
+    "blocks": {
       "type": "dynamiczone",
       "components": [
         "blocks.html-content-block",
@@ -56,8 +57,7 @@
         "blocks.embed-block",
         "blocks.cta-block",
         "blocks.content-block",
-        "blocks.paragraph-with-image",
-        "blocks.paragraph"
+        "blocks.paragraph-with-image"
       ]
     }
   }

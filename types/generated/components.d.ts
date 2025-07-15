@@ -175,17 +175,7 @@ export interface BlocksHtmlContentBlock extends Struct.ComponentSchema {
   info: {
     displayName: 'HtmlContent Block';
   };
-  attributes: {
-    htmlContent: Schema.Attribute.RichText &
-      Schema.Attribute.CustomField<
-        'plugin::ckeditor.CKEditor',
-        {
-          licenseKey: 'eyJhbGciOiJFUzI1NiJ9.eyJleHAiOjE3ODExMzU5OTksImp0aSI6IjQ3MGQwODQwLTZkODUtNGIwMi05MjJmLTU1YWYzOTU2OTNhOSIsInVzYWdlRW5kcG9pbnQiOiJodHRwczovL3Byb3h5LWV2ZW50LmNrZWRpdG9yLmNvbSIsImRpc3RyaWJ1dGlvbkNoYW5uZWwiOlsiY2xvdWQiLCJkcnVwYWwiXSwiZmVhdHVyZXMiOlsiRFJVUCIsIkUyUCIsIkUyVyJdLCJ2YyI6ImFmOTEyOWFhIn0.ExyD06q9XcZdrjHeyD4LyKVR4gjGKuXOiPZHz4MUKm4nBgNUSXmvlhGN0phcYUdsEth6HbGgrX5q1SyZk7SleQ';
-          output: 'HTML';
-          preset: 'rich';
-        }
-      >;
-  };
+  attributes: {};
 }
 
 export interface BlocksImageBlock extends Struct.ComponentSchema {
@@ -242,16 +232,6 @@ export interface BlocksOurServices extends Struct.ComponentSchema {
     description: Schema.Attribute.String;
     headline: Schema.Attribute.String;
     services: Schema.Attribute.Component<'blocks.article-card', true>;
-  };
-}
-
-export interface BlocksParagraph extends Struct.ComponentSchema {
-  collectionName: 'components_blocks_paragraphs';
-  info: {
-    displayName: 'Paragraph';
-  };
-  attributes: {
-    content: Schema.Attribute.RichText;
   };
 }
 
@@ -507,7 +487,6 @@ declare module '@strapi/strapi' {
       'blocks.info-block': BlocksInfoBlock;
       'blocks.mentor-registration-form': BlocksMentorRegistrationForm;
       'blocks.our-services': BlocksOurServices;
-      'blocks.paragraph': BlocksParagraph;
       'blocks.paragraph-with-image': BlocksParagraphWithImage;
       'blocks.popular-destinations': BlocksPopularDestinations;
       'blocks.recent-posts': BlocksRecentPosts;

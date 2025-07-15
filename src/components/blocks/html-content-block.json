@@ -4,15 +4,5 @@
     "displayName": "HtmlContent Block"
   },
   "options": {},
-  "attributes": {
-    "htmlContent": {
-      "type": "customField",
-      "options": {
-        "output": "HTML",
-        "preset": "rich",
-        "licenseKey": "eyJhbGciOiJFUzI1NiJ9.eyJleHAiOjE3ODExMzU5OTksImp0aSI6IjQ3MGQwODQwLTZkODUtNGIwMi05MjJmLTU1YWYzOTU2OTNhOSIsInVzYWdlRW5kcG9pbnQiOiJodHRwczovL3Byb3h5LWV2ZW50LmNrZWRpdG9yLmNvbSIsImRpc3RyaWJ1dGlvbkNoYW5uZWwiOlsiY2xvdWQiLCJkcnVwYWwiXSwiZmVhdHVyZXMiOlsiRFJVUCIsIkUyUCIsIkUyVyJdLCJ2YyI6ImFmOTEyOWFhIn0.ExyD06q9XcZdrjHeyD4LyKVR4gjGKuXOiPZHz4MUKm4nBgNUSXmvlhGN0phcYUdsEth6HbGgrX5q1SyZk7SleQ"
-      },
-      "customField": "plugin::ckeditor.CKEditor"
-    }
-  }
+  "attributes": {}
 }

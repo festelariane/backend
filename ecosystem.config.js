@@ -18,15 +18,16 @@ module.exports = {
       // --- Application 1: Your Main Node.js API/Web App ---
       name        : "happytimebackend", // A unique name for your application in PM2 list
       script      : "yarn",           // The executable to run (in this case, npm)
-      args        : "develop",         // Arguments to pass to the script (npm start)
+      args        : "start",         // Arguments to pass to the script (npm start)
       cwd         : "./",            // Current working directory for the app (usually your project root)
-      interpreter : "node",          // Specify the interpreter if not the default (optional, npm handles this)
-
-      // Cluster mode for Node.js applications:
+      interpreter : "cmd",          // Specify the interpreter if not the default (optional, npm handles this)
+	  shell       : true,  
+      
+	  // Cluster mode for Node.js applications:
       // This will spawn multiple instances of your app to utilize all CPU cores,
       // providing a built-in load balancer.
-      instances   : "max",           // "max" means as many instances as CPU cores
-      exec_mode   : "cluster",       // Use "cluster" mode for Node.js apps for load balancing
+      instances   : 1, //"max",           // "max" means as many instances as CPU cores
+      exec_mode   : "fork",//"cluster",       // Use "cluster" mode for Node.js apps for load balancing
 
       // Watch mode:
       // If true, PM2 will restart the application when file changes are detected.
@@ -57,7 +58,7 @@ module.exports = {
       // 'env_production' overrides or adds variables when starting with '--env production'.
       env_production : {
         NODE_ENV: "production", // Production environment
-        PORT: 1337,               // Port for production (e.g., standard HTTP port)
+        PORT: 3000,               // Port for production (e.g., standard HTTP port)
       },
 
       // Other useful options (uncomment and configure as needed):

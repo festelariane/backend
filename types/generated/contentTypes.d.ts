@@ -34,6 +34,10 @@ export interface AdminApiToken extends Struct.CollectionTypeSchema {
         minLength: 1;
       }> &
       Schema.Attribute.DefaultTo<''>;
+    encryptedKey: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
+        minLength: 1;
+      }>;
     expiresAt: Schema.Attribute.DateTime;
     lastUsedAt: Schema.Attribute.DateTime;
     lifespan: Schema.Attribute.BigInteger;
@@ -369,52 +373,6 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
-  collectionName: 'articles';
-  info: {
-    description: '';
-    displayName: 'Article';
-    pluralName: 'articles';
-    singularName: 'article';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    author: Schema.Attribute.String;
-    blocks: Schema.Attribute.DynamicZone<
-      [
-        'blocks.paragraph',
-        'blocks.paragraph-with-image',
-        'blocks.hero-section',
-        'blocks.heading',
-        'blocks.full-image',
-        'blocks.popular-destinations',
-        'blocks.our-services',
-        'blocks.content-block',
-      ]
-    >;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    desccription: Schema.Attribute.Text;
-    featured: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
-    image: Schema.Attribute.Media<'images'>;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::article.article'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    slug: Schema.Attribute.UID<'title'>;
-    title: Schema.Attribute.String;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
   collectionName: 'categories';
   info: {
@@ -430,7 +388,7 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    description: Schema.Attribute.Text;
+    description: Schema.Attribute.Blocks;
     featuredImage: Schema.Attribute.Media<'images'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -441,7 +399,6 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
     name: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.Unique;
-    pages: Schema.Attribute.Relation<'manyToMany', 'api::page.page'>;
     parent: Schema.Attribute.Relation<'oneToOne', 'api::category.category'>;
     posts: Schema.Attribute.Relation<'manyToMany', 'api::post.post'>;
     publishedAt: Schema.Attribute.DateTime;
@@ -564,48 +521,6 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
   };
 }
 
-export interface ApiNewsletterSignupNewsletterSignup
-  extends Struct.CollectionTypeSchema {
-  collectionName: 'newsletter_signups';
-  info: {
-    description: '';
-    displayName: 'Newsletter Signup';
-    pluralName: 'newsletter-signups';
-    singularName: 'newsletter-signup';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    fullName: Schema.Attribute.String;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::newsletter-signup.newsletter-signup'
-    > &
-      Schema.Attribute.Private;
-    message: Schema.Attribute.Text;
-    period: Schema.Attribute.Enumeration<
-      ['morning', 'afternoon', 'evening', 'other']
-    >;
-    publishedAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    yearOfBirth: Schema.Attribute.BigInteger &
-      Schema.Attribute.SetMinMax<
-        {
-          max: '2020';
-          min: '1930';
-        },
-        string
-      >;
-  };
-}
-
 export interface ApiPagePage extends Struct.CollectionTypeSchema {
   collectionName: 'pages';
   info: {
@@ -620,34 +535,17 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
   attributes: {
     blocks: Schema.Attribute.DynamicZone<
       [
-        'blocks.info-block',
-        'blocks.hero-section',
-        'blocks.featured-article',
-        'blocks.content-block',
-        'blocks.common-card-list',
-        'blocks.html-content-block',
         'blocks.mentor-registration-form',
-        'blocks.heading',
-        'blocks.full-image',
-        'blocks.embed-block',
-        'blocks.horizontal-ads',
-        'blocks.card-with-background-image',
-        'blocks.article-card',
-        'blocks.paragraph-with-image',
-        'blocks.paragraph',
+        'blocks.content-block',
+        'blocks.featured-article',
+        'blocks.html-content-block',
       ]
-    >;
-    categories: Schema.Attribute.Relation<
-      'manyToMany',
-      'api::category.category'
     >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     excerpt: Schema.Attribute.Text;
     featuredImage: Schema.Attribute.Media<'images'>;
-    isTwoColumnLayout: Schema.Attribute.Boolean &
-      Schema.Attribute.DefaultTo<false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::page.page'> &
       Schema.Attribute.Private;
@@ -673,11 +571,7 @@ export interface ApiPostPost extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    categories: Schema.Attribute.Relation<
-      'manyToMany',
-      'api::category.category'
-    >;
-    contentBlocks: Schema.Attribute.DynamicZone<
+    blocks: Schema.Attribute.DynamicZone<
       [
         'blocks.html-content-block',
         'blocks.image-block',
@@ -685,8 +579,11 @@ export interface ApiPostPost extends Struct.CollectionTypeSchema {
         'blocks.cta-block',
         'blocks.content-block',
         'blocks.paragraph-with-image',
-        'blocks.paragraph',
       ]
+    >;
+    categories: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::category.category'
     >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1369,12 +1266,10 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
-      'api::article.article': ApiArticleArticle;
       'api::category.category': ApiCategoryCategory;
       'api::consultation-contact.consultation-contact': ApiConsultationContactConsultationContact;
       'api::global.global': ApiGlobalGlobal;
       'api::home-page.home-page': ApiHomePageHomePage;
-      'api::newsletter-signup.newsletter-signup': ApiNewsletterSignupNewsletterSignup;
       'api::page.page': ApiPagePage;
       'api::post.post': ApiPostPost;
       'plugin::content-releases.release': PluginContentReleasesRelease;
