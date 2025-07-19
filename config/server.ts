@@ -4,4 +4,5 @@ export default ({ env }) => ({
   app: {
     keys: env.array('APP_KEYS'),
   },
+  proxy: true, // Crucial for Nginx: Tells Strapi it's behind a proxy
 });

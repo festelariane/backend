@@ -52,7 +52,6 @@
     "blocks": {
       "type": "dynamiczone",
       "components": [
-        "blocks.html-content-block",
         "blocks.image-block",
         "blocks.embed-block",
         "blocks.cta-block",

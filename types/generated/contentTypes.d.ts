@@ -534,12 +534,7 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
   };
   attributes: {
     blocks: Schema.Attribute.DynamicZone<
-      [
-        'blocks.mentor-registration-form',
-        'blocks.content-block',
-        'blocks.featured-article',
-        'blocks.html-content-block',
-      ]
+      ['blocks.content-block', 'blocks.html']
     >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -573,7 +568,6 @@ export interface ApiPostPost extends Struct.CollectionTypeSchema {
   attributes: {
     blocks: Schema.Attribute.DynamicZone<
       [
-        'blocks.html-content-block',
         'blocks.image-block',
         'blocks.embed-block',
         'blocks.cta-block',

@@ -170,12 +170,50 @@ export interface BlocksHorizontalAds extends Struct.ComponentSchema {
   };
 }
 
+export interface BlocksHtml extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_htmls';
+  info: {
+    displayName: ' Html';
+  };
+  attributes: {
+    htmlContent: Schema.Attribute.RichText &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor.CKEditor',
+        {
+          licenseKey: 'eyJhbGciOiJFUzI1NiJ9.eyJleHAiOjE3ODExMzU5OTksImp0aSI6IjQ3MGQwODQwLTZkODUtNGIwMi05MjJmLTU1YWYzOTU2OTNhOSIsInVzYWdlRW5kcG9pbnQiOiJodHRwczovL3Byb3h5LWV2ZW50LmNrZWRpdG9yLmNvbSIsImRpc3RyaWJ1dGlvbkNoYW5uZWwiOlsiY2xvdWQiLCJkcnVwYWwiXSwiZmVhdHVyZXMiOlsiRFJVUCIsIkUyUCIsIkUyVyJdLCJ2YyI6ImFmOTEyOWFhIn0.ExyD06q9XcZdrjHeyD4LyKVR4gjGKuXOiPZHz4MUKm4nBgNUSXmvlhGN0phcYUdsEth6HbGgrX5q1SyZk7SleQ';
+          output: 'HTML';
+          preset: 'rich';
+        }
+      >;
+    lightHtml: Schema.Attribute.RichText &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor.CKEditor',
+        {
+          licenseKey: 'eyJhbGciOiJFUzI1NiJ9.eyJleHAiOjE3ODExMzU5OTksImp0aSI6IjQ3MGQwODQwLTZkODUtNGIwMi05MjJmLTU1YWYzOTU2OTNhOSIsInVzYWdlRW5kcG9pbnQiOiJodHRwczovL3Byb3h5LWV2ZW50LmNrZWRpdG9yLmNvbSIsImRpc3RyaWJ1dGlvbkNoYW5uZWwiOlsiY2xvdWQiLCJkcnVwYWwiXSwiZmVhdHVyZXMiOlsiRFJVUCIsIkUyUCIsIkUyVyJdLCJ2YyI6ImFmOTEyOWFhIn0.ExyD06q9XcZdrjHeyD4LyKVR4gjGKuXOiPZHz4MUKm4nBgNUSXmvlhGN0phcYUdsEth6HbGgrX5q1SyZk7SleQ';
+          output: 'HTML';
+          preset: 'light';
+        }
+      >;
+    standard: Schema.Attribute.RichText &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor.CKEditor',
+        {
+          licenseKey: 'eyJhbGciOiJFUzI1NiJ9.eyJleHAiOjE3ODExMzU5OTksImp0aSI6IjQ3MGQwODQwLTZkODUtNGIwMi05MjJmLTU1YWYzOTU2OTNhOSIsInVzYWdlRW5kcG9pbnQiOiJodHRwczovL3Byb3h5LWV2ZW50LmNrZWRpdG9yLmNvbSIsImRpc3RyaWJ1dGlvbkNoYW5uZWwiOlsiY2xvdWQiLCJkcnVwYWwiXSwiZmVhdHVyZXMiOlsiRFJVUCIsIkUyUCIsIkUyVyJdLCJ2YyI6ImFmOTEyOWFhIn0.ExyD06q9XcZdrjHeyD4LyKVR4gjGKuXOiPZHz4MUKm4nBgNUSXmvlhGN0phcYUdsEth6HbGgrX5q1SyZk7SleQ';
+          output: 'HTML';
+          preset: 'standard';
+        }
+      >;
+  };
+}
+
 export interface BlocksHtmlContentBlock extends Struct.ComponentSchema {
   collectionName: 'components_blocks_html_content_blocks';
   info: {
     displayName: 'HtmlContent Block';
   };
-  attributes: {};
+  attributes: {
+    test: Schema.Attribute.String;
+  };
 }
 
 export interface BlocksImageBlock extends Struct.ComponentSchema {
@@ -304,6 +342,14 @@ export interface BlocksSubscribe extends Struct.ComponentSchema {
     usernamePlaceholder: Schema.Attribute.String;
     yearPlaceholder: Schema.Attribute.String;
   };
+}
+
+export interface BlocksTtt extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_ttts';
+  info: {
+    displayName: 'TTT';
+  };
+  attributes: {};
 }
 
 export interface CommonArticleExcerpt extends Struct.ComponentSchema {
@@ -482,6 +528,7 @@ declare module '@strapi/strapi' {
       'blocks.heading': BlocksHeading;
       'blocks.hero-section': BlocksHeroSection;
       'blocks.horizontal-ads': BlocksHorizontalAds;
+      'blocks.html': BlocksHtml;
       'blocks.html-content-block': BlocksHtmlContentBlock;
       'blocks.image-block': BlocksImageBlock;
       'blocks.info-block': BlocksInfoBlock;
@@ -492,6 +539,7 @@ declare module '@strapi/strapi' {
       'blocks.recent-posts': BlocksRecentPosts;
       'blocks.scholarship': BlocksScholarship;
       'blocks.subscribe': BlocksSubscribe;
+      'blocks.ttt': BlocksTtt;
       'common.article-excerpt': CommonArticleExcerpt;
       'common.comment-info': CommonCommentInfo;
       'elements.card': ElementsCard;

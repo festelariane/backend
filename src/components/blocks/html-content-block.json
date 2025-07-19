@@ -4,5 +4,10 @@
     "displayName": "HtmlContent Block"
   },
   "options": {},
-  "attributes": {}
+  "attributes": {
+    "test": {
+      "type": "string"
+    }
+  },
+  "config": {}
 }

@@ -13,6 +13,7 @@
     "strapi": "strapi"
   },
   "dependencies": {
+    "@ckeditor/ckeditor5-source-editing": "^46.0.0",
     "@ckeditor/strapi-plugin-ckeditor": "^1.1.1",
     "@strapi/plugin-cloud": "5.17.0",
     "@strapi/plugin-users-permissions": "5.17.0",

@@ -37,10 +37,8 @@
     "blocks": {
       "type": "dynamiczone",
       "components": [
-        "blocks.mentor-registration-form",
         "blocks.content-block",
-        "blocks.featured-article",
-        "blocks.html-content-block"
+        "blocks.html"
       ]
     }
   }
