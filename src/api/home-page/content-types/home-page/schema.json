@@ -10,6 +10,7 @@
   "options": {
     "draftAndPublish": true
   },
+  "pluginOptions": {},
   "attributes": {
     "title": {
       "type": "string"
@@ -25,7 +26,12 @@
         "blocks.our-services",
         "blocks.popular-destinations",
         "blocks.scholarship",
-        "blocks.mentor-registration-form"
+        "blocks.mentor-registration-form",
+        "blocks.html-content-block",
+        "blocks.horizontal-ads",
+        "blocks.featured-posts",
+        "blocks.recent-posts",
+        "blocks.raw-html-block"
       ]
     }
   }

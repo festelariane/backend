@@ -501,6 +501,11 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
         'blocks.popular-destinations',
         'blocks.scholarship',
         'blocks.mentor-registration-form',
+        'blocks.html-content-block',
+        'blocks.horizontal-ads',
+        'blocks.featured-posts',
+        'blocks.recent-posts',
+        'blocks.raw-html-block',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;
@@ -534,7 +539,17 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
   };
   attributes: {
     blocks: Schema.Attribute.DynamicZone<
-      ['blocks.content-block', 'blocks.html']
+      [
+        'blocks.content-block',
+        'blocks.raw-html-block',
+        'blocks.html-content-block',
+        'blocks.paragraph-with-image',
+        'blocks.image-block',
+        'blocks.horizontal-ads',
+        'blocks.school-fee',
+        'blocks.featured-posts',
+        'blocks.recent-posts',
+      ]
     >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &

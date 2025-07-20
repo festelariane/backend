@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_blocks_raw_html_blocks",
+  "info": {
+    "displayName": "RawHtml Block"
+  },
+  "options": {},
+  "attributes": {
+    "rawHtml": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

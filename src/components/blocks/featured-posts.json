@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_blocks_featured_posts",
+  "info": {
+    "displayName": "Featured Posts"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "ex": {
+      "type": "text"
+    },
+    "posts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::post.post"
+    }
+  },
+  "config": {}
+}

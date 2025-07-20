@@ -38,7 +38,14 @@
       "type": "dynamiczone",
       "components": [
         "blocks.content-block",
-        "blocks.html"
+        "blocks.raw-html-block",
+        "blocks.html-content-block",
+        "blocks.paragraph-with-image",
+        "blocks.image-block",
+        "blocks.horizontal-ads",
+        "blocks.school-fee",
+        "blocks.featured-posts",
+        "blocks.recent-posts"
       ]
     }
   }

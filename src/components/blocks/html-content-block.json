@@ -5,8 +5,9 @@
   },
   "options": {},
   "attributes": {
-    "test": {
-      "type": "string"
+    "htmlContent": {
+      "type": "customField",
+      "customField": "plugin::tinymce.tinymce"
     }
   },
   "config": {}

@@ -78,9 +78,7 @@ export interface BlocksContentBlock extends Struct.ComponentSchema {
   info: {
     displayName: 'Content Block';
   };
-  attributes: {
-    content: Schema.Attribute.Blocks;
-  };
+  attributes: {};
 }
 
 export interface BlocksCtaBlock extends Struct.ComponentSchema {
@@ -107,17 +105,15 @@ export interface BlocksEmbedBlock extends Struct.ComponentSchema {
   };
 }
 
-export interface BlocksFeaturedArticle extends Struct.ComponentSchema {
-  collectionName: 'components_blocks_featured_articles';
+export interface BlocksFeaturedPosts extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_featured_posts';
   info: {
-    description: '';
-    displayName: 'Featured Article';
+    displayName: 'Featured Posts';
   };
   attributes: {
-    excerpt: Schema.Attribute.RichText;
-    headline: Schema.Attribute.String;
-    image: Schema.Attribute.Media<'images'>;
-    link: Schema.Attribute.Component<'elements.link', false>;
+    ex: Schema.Attribute.Text;
+    posts: Schema.Attribute.Relation<'oneToMany', 'api::post.post'>;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -170,49 +166,14 @@ export interface BlocksHorizontalAds extends Struct.ComponentSchema {
   };
 }
 
-export interface BlocksHtml extends Struct.ComponentSchema {
-  collectionName: 'components_blocks_htmls';
-  info: {
-    displayName: ' Html';
-  };
-  attributes: {
-    htmlContent: Schema.Attribute.RichText &
-      Schema.Attribute.CustomField<
-        'plugin::ckeditor.CKEditor',
-        {
-          licenseKey: 'eyJhbGciOiJFUzI1NiJ9.eyJleHAiOjE3ODExMzU5OTksImp0aSI6IjQ3MGQwODQwLTZkODUtNGIwMi05MjJmLTU1YWYzOTU2OTNhOSIsInVzYWdlRW5kcG9pbnQiOiJodHRwczovL3Byb3h5LWV2ZW50LmNrZWRpdG9yLmNvbSIsImRpc3RyaWJ1dGlvbkNoYW5uZWwiOlsiY2xvdWQiLCJkcnVwYWwiXSwiZmVhdHVyZXMiOlsiRFJVUCIsIkUyUCIsIkUyVyJdLCJ2YyI6ImFmOTEyOWFhIn0.ExyD06q9XcZdrjHeyD4LyKVR4gjGKuXOiPZHz4MUKm4nBgNUSXmvlhGN0phcYUdsEth6HbGgrX5q1SyZk7SleQ';
-          output: 'HTML';
-          preset: 'rich';
-        }
-      >;
-    lightHtml: Schema.Attribute.RichText &
-      Schema.Attribute.CustomField<
-        'plugin::ckeditor.CKEditor',
-        {
-          licenseKey: 'eyJhbGciOiJFUzI1NiJ9.eyJleHAiOjE3ODExMzU5OTksImp0aSI6IjQ3MGQwODQwLTZkODUtNGIwMi05MjJmLTU1YWYzOTU2OTNhOSIsInVzYWdlRW5kcG9pbnQiOiJodHRwczovL3Byb3h5LWV2ZW50LmNrZWRpdG9yLmNvbSIsImRpc3RyaWJ1dGlvbkNoYW5uZWwiOlsiY2xvdWQiLCJkcnVwYWwiXSwiZmVhdHVyZXMiOlsiRFJVUCIsIkUyUCIsIkUyVyJdLCJ2YyI6ImFmOTEyOWFhIn0.ExyD06q9XcZdrjHeyD4LyKVR4gjGKuXOiPZHz4MUKm4nBgNUSXmvlhGN0phcYUdsEth6HbGgrX5q1SyZk7SleQ';
-          output: 'HTML';
-          preset: 'light';
-        }
-      >;
-    standard: Schema.Attribute.RichText &
-      Schema.Attribute.CustomField<
-        'plugin::ckeditor.CKEditor',
-        {
-          licenseKey: 'eyJhbGciOiJFUzI1NiJ9.eyJleHAiOjE3ODExMzU5OTksImp0aSI6IjQ3MGQwODQwLTZkODUtNGIwMi05MjJmLTU1YWYzOTU2OTNhOSIsInVzYWdlRW5kcG9pbnQiOiJodHRwczovL3Byb3h5LWV2ZW50LmNrZWRpdG9yLmNvbSIsImRpc3RyaWJ1dGlvbkNoYW5uZWwiOlsiY2xvdWQiLCJkcnVwYWwiXSwiZmVhdHVyZXMiOlsiRFJVUCIsIkUyUCIsIkUyVyJdLCJ2YyI6ImFmOTEyOWFhIn0.ExyD06q9XcZdrjHeyD4LyKVR4gjGKuXOiPZHz4MUKm4nBgNUSXmvlhGN0phcYUdsEth6HbGgrX5q1SyZk7SleQ';
-          output: 'HTML';
-          preset: 'standard';
-        }
-      >;
-  };
-}
-
 export interface BlocksHtmlContentBlock extends Struct.ComponentSchema {
   collectionName: 'components_blocks_html_content_blocks';
   info: {
     displayName: 'HtmlContent Block';
   };
   attributes: {
-    test: Schema.Attribute.String;
+    htmlContent: Schema.Attribute.RichText &
+      Schema.Attribute.CustomField<'plugin::tinymce.tinymce'>;
   };
 }
 
@@ -298,6 +259,16 @@ export interface BlocksPopularDestinations extends Struct.ComponentSchema {
   };
 }
 
+export interface BlocksRawHtmlBlock extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_raw_html_blocks';
+  info: {
+    displayName: 'RawHtml Block';
+  };
+  attributes: {
+    rawHtml: Schema.Attribute.Text;
+  };
+}
+
 export interface BlocksRecentPosts extends Struct.ComponentSchema {
   collectionName: 'components_blocks_recent_posts';
   info: {
@@ -306,8 +277,6 @@ export interface BlocksRecentPosts extends Struct.ComponentSchema {
     icon: 'monitor';
   };
   attributes: {
-    mainArticle: Schema.Attribute.Component<'common.article-excerpt', false>;
-    otherArticles: Schema.Attribute.Component<'common.article-excerpt', true>;
     title: Schema.Attribute.String;
   };
 }
@@ -321,6 +290,18 @@ export interface BlocksScholarship extends Struct.ComponentSchema {
     content: Schema.Attribute.RichText;
     headline: Schema.Attribute.String;
     link: Schema.Attribute.Component<'elements.link', false>;
+  };
+}
+
+export interface BlocksSchoolFee extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_school_fees';
+  info: {
+    displayName: 'SchoolFee';
+  };
+  attributes: {
+    content: Schema.Attribute.Component<'blocks.raw-html-block', false>;
+    excerpt: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -342,14 +323,6 @@ export interface BlocksSubscribe extends Struct.ComponentSchema {
     usernamePlaceholder: Schema.Attribute.String;
     yearPlaceholder: Schema.Attribute.String;
   };
-}
-
-export interface BlocksTtt extends Struct.ComponentSchema {
-  collectionName: 'components_blocks_ttts';
-  info: {
-    displayName: 'TTT';
-  };
-  attributes: {};
 }
 
 export interface CommonArticleExcerpt extends Struct.ComponentSchema {
@@ -523,12 +496,11 @@ declare module '@strapi/strapi' {
       'blocks.content-block': BlocksContentBlock;
       'blocks.cta-block': BlocksCtaBlock;
       'blocks.embed-block': BlocksEmbedBlock;
-      'blocks.featured-article': BlocksFeaturedArticle;
+      'blocks.featured-posts': BlocksFeaturedPosts;
       'blocks.full-image': BlocksFullImage;
       'blocks.heading': BlocksHeading;
       'blocks.hero-section': BlocksHeroSection;
       'blocks.horizontal-ads': BlocksHorizontalAds;
-      'blocks.html': BlocksHtml;
       'blocks.html-content-block': BlocksHtmlContentBlock;
       'blocks.image-block': BlocksImageBlock;
       'blocks.info-block': BlocksInfoBlock;
@@ -536,10 +508,11 @@ declare module '@strapi/strapi' {
       'blocks.our-services': BlocksOurServices;
       'blocks.paragraph-with-image': BlocksParagraphWithImage;
       'blocks.popular-destinations': BlocksPopularDestinations;
+      'blocks.raw-html-block': BlocksRawHtmlBlock;
       'blocks.recent-posts': BlocksRecentPosts;
       'blocks.scholarship': BlocksScholarship;
+      'blocks.school-fee': BlocksSchoolFee;
       'blocks.subscribe': BlocksSubscribe;
-      'blocks.ttt': BlocksTtt;
       'common.article-excerpt': CommonArticleExcerpt;
       'common.comment-info': CommonCommentInfo;
       'elements.card': ElementsCard;

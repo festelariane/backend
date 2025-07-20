@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_blocks_school_fees",
+  "info": {
+    "displayName": "SchoolFee"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "excerpt": {
+      "type": "text"
+    },
+    "content": {
+      "type": "component",
+      "component": "blocks.raw-html-block",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

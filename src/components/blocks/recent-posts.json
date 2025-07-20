@@ -9,17 +9,6 @@
   "attributes": {
     "title": {
       "type": "string"
-    },
-    "mainArticle": {
-      "displayName": "Article Excerpt",
-      "type": "component",
-      "repeatable": false,
-      "component": "common.article-excerpt"
-    },
-    "otherArticles": {
-      "type": "component",
-      "repeatable": true,
-      "component": "common.article-excerpt"
     }
   }
 }
