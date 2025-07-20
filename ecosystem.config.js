@@ -1,4 +1,3 @@
-  GNU nano 6.2                                                                                  ecosystem.config.js
 module.exports = {
   apps : [{
     name   : "my-strapi-app",
