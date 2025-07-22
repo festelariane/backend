@@ -5,12 +5,15 @@
   },
   "options": {},
   "attributes": {
+    "name": {
+      "type": "string"
+    },
     "image": {
+      "type": "media",
+      "multiple": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     }
   }
 }

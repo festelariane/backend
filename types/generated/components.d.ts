@@ -102,6 +102,7 @@ export interface BlocksEmbedBlock extends Struct.ComponentSchema {
   attributes: {
     caption: Schema.Attribute.String;
     embedCode: Schema.Attribute.Text;
+    name: Schema.Attribute.String;
   };
 }
 
@@ -111,7 +112,6 @@ export interface BlocksFeaturedPosts extends Struct.ComponentSchema {
     displayName: 'Featured Posts';
   };
   attributes: {
-    ex: Schema.Attribute.Text;
     posts: Schema.Attribute.Relation<'oneToMany', 'api::post.post'>;
     title: Schema.Attribute.String;
   };
@@ -124,6 +124,7 @@ export interface BlocksFullImage extends Struct.ComponentSchema {
   };
   attributes: {
     image: Schema.Attribute.Media<'images'>;
+    name: Schema.Attribute.String;
   };
 }
 
@@ -158,11 +159,18 @@ export interface BlocksHorizontalAds extends Struct.ComponentSchema {
   collectionName: 'components_blocks_horizontal_ads';
   info: {
     description: '';
-    displayName: 'Horizontal Ads';
+    displayName: 'Paragraph With Background Image';
   };
   attributes: {
-    htmlContent: Schema.Attribute.Text;
-    image: Schema.Attribute.Media<'images'>;
+    backgroundImage: Schema.Attribute.Media<'images'>;
+    htmlContent: Schema.Attribute.RichText &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'defaultHtml';
+        }
+      >;
+    name: Schema.Attribute.String;
   };
 }
 
@@ -173,7 +181,13 @@ export interface BlocksHtmlContentBlock extends Struct.ComponentSchema {
   };
   attributes: {
     htmlContent: Schema.Attribute.RichText &
-      Schema.Attribute.CustomField<'plugin::tinymce.tinymce'>;
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'defaultHtml';
+        }
+      >;
+    name: Schema.Attribute.String;
   };
 }
 
@@ -259,16 +273,6 @@ export interface BlocksPopularDestinations extends Struct.ComponentSchema {
   };
 }
 
-export interface BlocksRawHtmlBlock extends Struct.ComponentSchema {
-  collectionName: 'components_blocks_raw_html_blocks';
-  info: {
-    displayName: 'RawHtml Block';
-  };
-  attributes: {
-    rawHtml: Schema.Attribute.Text;
-  };
-}
-
 export interface BlocksRecentPosts extends Struct.ComponentSchema {
   collectionName: 'components_blocks_recent_posts';
   info: {
@@ -299,7 +303,6 @@ export interface BlocksSchoolFee extends Struct.ComponentSchema {
     displayName: 'SchoolFee';
   };
   attributes: {
-    content: Schema.Attribute.Component<'blocks.raw-html-block', false>;
     excerpt: Schema.Attribute.Text;
     title: Schema.Attribute.String;
   };
@@ -508,7 +511,6 @@ declare module '@strapi/strapi' {
       'blocks.our-services': BlocksOurServices;
       'blocks.paragraph-with-image': BlocksParagraphWithImage;
       'blocks.popular-destinations': BlocksPopularDestinations;
-      'blocks.raw-html-block': BlocksRawHtmlBlock;
       'blocks.recent-posts': BlocksRecentPosts;
       'blocks.scholarship': BlocksScholarship;
       'blocks.school-fee': BlocksSchoolFee;

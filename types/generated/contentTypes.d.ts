@@ -505,7 +505,6 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
         'blocks.horizontal-ads',
         'blocks.featured-posts',
         'blocks.recent-posts',
-        'blocks.raw-html-block',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;
@@ -541,14 +540,13 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
     blocks: Schema.Attribute.DynamicZone<
       [
         'blocks.content-block',
-        'blocks.raw-html-block',
-        'blocks.html-content-block',
         'blocks.paragraph-with-image',
         'blocks.image-block',
         'blocks.horizontal-ads',
         'blocks.school-fee',
         'blocks.featured-posts',
         'blocks.recent-posts',
+        'blocks.html-content-block',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;

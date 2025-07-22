@@ -10,11 +10,6 @@
     },
     "excerpt": {
       "type": "text"
-    },
-    "content": {
-      "type": "component",
-      "component": "blocks.raw-html-block",
-      "repeatable": false
     }
   },
   "config": {}

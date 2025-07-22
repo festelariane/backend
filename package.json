@@ -16,9 +16,8 @@
     "strapi": "strapi"
   },
   "dependencies": {
+    "@_sh/strapi-plugin-ckeditor": "^6.0.2",
     "@ckeditor/ckeditor5-source-editing": "^46.0.0",
-    "@ckeditor/strapi-plugin-ckeditor": "^1.1.1",
-    "@sklinet/strapi-plugin-tinymce": "^1.1.6",
     "@strapi/plugin-cloud": "5.17.0",
     "@strapi/plugin-users-permissions": "5.17.0",
     "@strapi/strapi": "5.17.0",

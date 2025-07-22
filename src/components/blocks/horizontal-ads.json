@@ -1,12 +1,15 @@
 {
   "collectionName": "components_blocks_horizontal_ads",
   "info": {
-    "displayName": "Horizontal Ads",
+    "displayName": "Paragraph With Background Image",
     "description": ""
   },
   "options": {},
   "attributes": {
-    "image": {
+    "name": {
+      "type": "string"
+    },
+    "backgroundImage": {
       "type": "media",
       "multiple": false,
       "required": false,
@@ -15,7 +18,11 @@
       ]
     },
     "htmlContent": {
-      "type": "text"
+      "type": "customField",
+      "customField": "plugin::ckeditor5.CKEditor",
+      "options": {
+        "preset": "defaultHtml"
+      }
     }
   }
 }

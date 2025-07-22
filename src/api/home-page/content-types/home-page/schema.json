@@ -30,8 +30,7 @@
         "blocks.html-content-block",
         "blocks.horizontal-ads",
         "blocks.featured-posts",
-        "blocks.recent-posts",
-        "blocks.raw-html-block"
+        "blocks.recent-posts"
       ]
     }
   }

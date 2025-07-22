@@ -8,9 +8,6 @@
     "title": {
       "type": "string"
     },
-    "ex": {
-      "type": "text"
-    },
     "posts": {
       "type": "relation",
       "relation": "oneToMany",
