@@ -44,7 +44,10 @@
         "blocks.school-fee",
         "blocks.featured-posts",
         "blocks.recent-posts",
-        "blocks.html-content-block"
+        "blocks.html-content-block",
+        "blocks.our-services",
+        "blocks.full-image",
+        "blocks.heading"
       ]
     }
   }

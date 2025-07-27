@@ -23,7 +23,13 @@ export interface BlocksArticleCard extends Struct.ComponentSchema {
   };
   attributes: {
     description: Schema.Attribute.String;
+    descriptionAligment: Schema.Attribute.Enumeration<
+      ['left', 'center', 'right', 'justify']
+    >;
     headline: Schema.Attribute.String;
+    headlineAlignment: Schema.Attribute.Enumeration<
+      ['left', 'center', 'right', 'justify']
+    >;
     iconClassNames: Schema.Attribute.String;
     image: Schema.Attribute.Media<'images'>;
     link: Schema.Attribute.Component<'elements.link', false>;
@@ -39,7 +45,13 @@ export interface BlocksCardWithBackgroundImage extends Struct.ComponentSchema {
   attributes: {
     content: Schema.Attribute.String;
     headline: Schema.Attribute.String;
-    htmlBodyContent: Schema.Attribute.Text;
+    htmlContent: Schema.Attribute.RichText &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'defaultHtml';
+        }
+      >;
     image: Schema.Attribute.Media<'images'>;
     textAlign: Schema.Attribute.Enumeration<['left', 'center', 'right']> &
       Schema.Attribute.DefaultTo<'center'>;
@@ -78,7 +90,9 @@ export interface BlocksContentBlock extends Struct.ComponentSchema {
   info: {
     displayName: 'Content Block';
   };
-  attributes: {};
+  attributes: {
+    content: Schema.Attribute.Blocks;
+  };
 }
 
 export interface BlocksCtaBlock extends Struct.ComponentSchema {
@@ -254,7 +268,13 @@ export interface BlocksParagraphWithImage extends Struct.ComponentSchema {
     displayName: 'Paragraph With Image';
   };
   attributes: {
-    content: Schema.Attribute.RichText;
+    content: Schema.Attribute.RichText &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'defaultHtml';
+        }
+      >;
     image: Schema.Attribute.Media<'images'>;
     imageLandscape: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
     reversed: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
@@ -352,6 +372,16 @@ export interface CommonCommentInfo extends Struct.ComponentSchema {
     image: Schema.Attribute.Media<'images'>;
     name: Schema.Attribute.String;
     slug: Schema.Attribute.String;
+    stars: Schema.Attribute.Integer &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 5;
+          min: 0;
+        },
+        number
+      > &
+      Schema.Attribute.DefaultTo<0>;
+    title: Schema.Attribute.String;
   };
 }
 

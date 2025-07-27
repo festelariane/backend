@@ -6,11 +6,11 @@
   "options": {},
   "attributes": {
     "image": {
+      "type": "media",
+      "multiple": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "name": {
       "type": "string"
@@ -20,6 +20,15 @@
     },
     "slug": {
       "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "stars": {
+      "type": "integer",
+      "default": 0,
+      "min": 0,
+      "max": 5
     }
   }
 }

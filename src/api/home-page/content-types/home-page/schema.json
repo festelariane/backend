@@ -30,7 +30,12 @@
         "blocks.html-content-block",
         "blocks.horizontal-ads",
         "blocks.featured-posts",
-        "blocks.recent-posts"
+        "blocks.recent-posts",
+        "blocks.comments",
+        "blocks.paragraph-with-image",
+        "blocks.content-block",
+        "blocks.full-image",
+        "blocks.heading"
       ]
     }
   }

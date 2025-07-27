@@ -4,5 +4,9 @@
     "displayName": "Content Block"
   },
   "options": {},
-  "attributes": {}
+  "attributes": {
+    "content": {
+      "type": "blocks"
+    }
+  }
 }

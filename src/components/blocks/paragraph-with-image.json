@@ -5,15 +5,12 @@
   },
   "options": {},
   "attributes": {
-    "content": {
-      "type": "richtext"
-    },
     "image": {
+      "type": "media",
+      "multiple": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "reversed": {
       "type": "boolean",
@@ -22,6 +19,13 @@
     "imageLandscape": {
       "type": "boolean",
       "default": true
+    },
+    "content": {
+      "type": "customField",
+      "customField": "plugin::ckeditor5.CKEditor",
+      "options": {
+        "preset": "defaultHtml"
+      }
     }
   }
 }

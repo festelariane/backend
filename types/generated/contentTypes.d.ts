@@ -505,6 +505,11 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
         'blocks.horizontal-ads',
         'blocks.featured-posts',
         'blocks.recent-posts',
+        'blocks.comments',
+        'blocks.paragraph-with-image',
+        'blocks.content-block',
+        'blocks.full-image',
+        'blocks.heading',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;
@@ -547,6 +552,9 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
         'blocks.featured-posts',
         'blocks.recent-posts',
         'blocks.html-content-block',
+        'blocks.our-services',
+        'blocks.full-image',
+        'blocks.heading',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;
@@ -586,6 +594,10 @@ export interface ApiPostPost extends Struct.CollectionTypeSchema {
         'blocks.cta-block',
         'blocks.content-block',
         'blocks.paragraph-with-image',
+        'blocks.horizontal-ads',
+        'blocks.html-content-block',
+        'blocks.full-image',
+        'blocks.heading',
       ]
     >;
     categories: Schema.Attribute.Relation<

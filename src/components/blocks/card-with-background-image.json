@@ -22,15 +22,19 @@
     },
     "textAlign": {
       "type": "enumeration",
+      "default": "center",
       "enum": [
         "left",
         "center",
         "right"
-      ],
-      "default": "center"
+      ]
     },
-    "htmlBodyContent": {
-      "type": "text"
+    "htmlContent": {
+      "type": "customField",
+      "customField": "plugin::ckeditor5.CKEditor",
+      "options": {
+        "preset": "defaultHtml"
+      }
     }
   }
 }

@@ -56,7 +56,11 @@
         "blocks.embed-block",
         "blocks.cta-block",
         "blocks.content-block",
-        "blocks.paragraph-with-image"
+        "blocks.paragraph-with-image",
+        "blocks.horizontal-ads",
+        "blocks.html-content-block",
+        "blocks.full-image",
+        "blocks.heading"
       ]
     }
   }
