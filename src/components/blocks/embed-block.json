@@ -12,7 +12,7 @@
       "type": "text"
     },
     "caption": {
-      "type": "string"
+      "type": "text"
     }
   }
 }

@@ -9,13 +9,12 @@
       "type": "string"
     },
     "description": {
-      "type": "string"
+      "type": "text"
     },
     "destinations": {
-      "displayName": "Article Card",
       "type": "component",
-      "repeatable": true,
-      "component": "blocks.article-card"
+      "component": "blocks.article-card",
+      "repeatable": true
     }
   }
 }

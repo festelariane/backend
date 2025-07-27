@@ -19,12 +19,12 @@
       ]
     },
     "headline": {
-      "type": "string"
+      "type": "text"
     },
     "callToAction": {
       "type": "component",
-      "repeatable": false,
-      "component": "elements.link"
+      "component": "elements.link",
+      "repeatable": false
     },
     "theme": {
       "type": "enumeration",

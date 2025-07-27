@@ -7,7 +7,7 @@ export interface BlocksAd extends Struct.ComponentSchema {
     displayName: 'Ad';
   };
   attributes: {
-    description: Schema.Attribute.String;
+    description: Schema.Attribute.Text;
     image: Schema.Attribute.Media<'images'>;
     isActive: Schema.Attribute.Boolean;
     link: Schema.Attribute.String;
@@ -22,7 +22,7 @@ export interface BlocksArticleCard extends Struct.ComponentSchema {
     displayName: 'Common Card';
   };
   attributes: {
-    description: Schema.Attribute.String;
+    description: Schema.Attribute.Text;
     descriptionAligment: Schema.Attribute.Enumeration<
       ['left', 'center', 'right', 'justify']
     >;
@@ -43,7 +43,7 @@ export interface BlocksCardWithBackgroundImage extends Struct.ComponentSchema {
     displayName: 'Card With Background Image';
   };
   attributes: {
-    content: Schema.Attribute.String;
+    content: Schema.Attribute.Text;
     headline: Schema.Attribute.String;
     htmlContent: Schema.Attribute.RichText &
       Schema.Attribute.CustomField<
@@ -79,7 +79,7 @@ export interface BlocksCommonCardList extends Struct.ComponentSchema {
     displayName: 'Common Card List';
   };
   attributes: {
-    description: Schema.Attribute.String;
+    description: Schema.Attribute.Text;
     headline: Schema.Attribute.String;
     items: Schema.Attribute.Component<'blocks.article-card', true>;
     itemWrapperClassNames: Schema.Attribute.String &
@@ -117,7 +117,7 @@ export interface BlocksEmbedBlock extends Struct.ComponentSchema {
     displayName: 'Embed Block';
   };
   attributes: {
-    caption: Schema.Attribute.String;
+    caption: Schema.Attribute.Text;
     embedCode: Schema.Attribute.Text;
     name: Schema.Attribute.String;
   };
@@ -151,7 +151,7 @@ export interface BlocksHeading extends Struct.ComponentSchema {
     displayName: 'Heading ';
   };
   attributes: {
-    heading: Schema.Attribute.String;
+    heading: Schema.Attribute.Text;
   };
 }
 
@@ -164,8 +164,8 @@ export interface BlocksHeroSection extends Struct.ComponentSchema {
   attributes: {
     callToAction: Schema.Attribute.Component<'elements.link', false>;
     callToAction2: Schema.Attribute.Component<'elements.link', false>;
-    content: Schema.Attribute.String;
-    heading: Schema.Attribute.String;
+    content: Schema.Attribute.Text;
+    heading: Schema.Attribute.Text;
     image: Schema.Attribute.Media<'images'>;
     theme: Schema.Attribute.Enumeration<['turquoise', 'orange']>;
   };
@@ -213,7 +213,7 @@ export interface BlocksImageBlock extends Struct.ComponentSchema {
     displayName: 'Image Block';
   };
   attributes: {
-    caption: Schema.Attribute.String;
+    caption: Schema.Attribute.Text;
     image: Schema.Attribute.Media<'images'>;
     name: Schema.Attribute.String;
   };
@@ -228,7 +228,7 @@ export interface BlocksInfoBlock extends Struct.ComponentSchema {
   attributes: {
     callToAction: Schema.Attribute.Component<'elements.link', false>;
     content: Schema.Attribute.Blocks;
-    headline: Schema.Attribute.String;
+    headline: Schema.Attribute.Text;
     image: Schema.Attribute.Media<'images'>;
     reversed: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     theme: Schema.Attribute.Enumeration<['turquoise', 'orange']>;
@@ -242,7 +242,7 @@ export interface BlocksMentorRegistrationForm extends Struct.ComponentSchema {
     displayName: 'Mentor Registration Form';
   };
   attributes: {
-    content: Schema.Attribute.String;
+    content: Schema.Attribute.Text;
     descriptionPlaceholder: Schema.Attribute.String;
     emailPlaceholder: Schema.Attribute.String;
     fullNamePlaceholder: Schema.Attribute.String;
@@ -259,7 +259,7 @@ export interface BlocksOurServices extends Struct.ComponentSchema {
     displayName: 'Our Services';
   };
   attributes: {
-    description: Schema.Attribute.String;
+    description: Schema.Attribute.Text;
     headline: Schema.Attribute.String;
     services: Schema.Attribute.Component<'blocks.article-card', true>;
   };
@@ -291,7 +291,7 @@ export interface BlocksPopularDestinations extends Struct.ComponentSchema {
     displayName: 'Popular Destinations';
   };
   attributes: {
-    description: Schema.Attribute.String;
+    description: Schema.Attribute.Text;
     destinations: Schema.Attribute.Component<'blocks.article-card', true>;
     headline: Schema.Attribute.String;
   };
@@ -345,7 +345,7 @@ export interface BlocksSubscribe extends Struct.ComponentSchema {
     messageLabel: Schema.Attribute.String;
     morningText: Schema.Attribute.String;
     otherText: Schema.Attribute.String;
-    subheadline: Schema.Attribute.String;
+    subheadline: Schema.Attribute.Text;
     subscribeButtonText: Schema.Attribute.String;
     usernamePlaceholder: Schema.Attribute.String;
     yearPlaceholder: Schema.Attribute.String;
@@ -431,10 +431,10 @@ export interface ElementsSeo extends Struct.ComponentSchema {
     displayName: 'Seo';
   };
   attributes: {
-    keywords: Schema.Attribute.String;
+    keywords: Schema.Attribute.Text;
     metaDescription: Schema.Attribute.Text;
     metaImage: Schema.Attribute.Media<'images'>;
-    metaTitle: Schema.Attribute.String;
+    metaTitle: Schema.Attribute.Text;
   };
 }
 

@@ -10,17 +10,17 @@
       "type": "string"
     },
     "image": {
+      "type": "media",
+      "multiple": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "link": {
       "type": "string"
     },
     "description": {
-      "type": "string"
+      "type": "text"
     },
     "isActive": {
       "type": "boolean"

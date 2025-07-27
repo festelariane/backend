@@ -6,7 +6,7 @@
   "options": {},
   "attributes": {
     "heading": {
-      "type": "string"
+      "type": "text"
     }
   }
 }

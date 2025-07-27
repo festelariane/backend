@@ -9,7 +9,7 @@
       "type": "string"
     },
     "subheadline": {
-      "type": "string"
+      "type": "text"
     },
     "usernamePlaceholder": {
       "type": "string"

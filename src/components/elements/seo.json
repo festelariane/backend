@@ -6,20 +6,20 @@
   "options": {},
   "attributes": {
     "metaTitle": {
-      "type": "string"
+      "type": "text"
     },
     "metaDescription": {
       "type": "text"
     },
     "metaImage": {
+      "type": "media",
+      "multiple": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "keywords": {
-      "type": "string"
+      "type": "text"
     }
   }
 }
