@@ -215,6 +215,7 @@ export interface BlocksImageBlock extends Struct.ComponentSchema {
   attributes: {
     caption: Schema.Attribute.String;
     image: Schema.Attribute.Media<'images'>;
+    name: Schema.Attribute.String;
   };
 }
 
@@ -279,6 +280,7 @@ export interface BlocksParagraphWithImage extends Struct.ComponentSchema {
       >;
     image: Schema.Attribute.Media<'images'>;
     imageLandscape: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
+    name: Schema.Attribute.String;
     reversed: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
   };
 }

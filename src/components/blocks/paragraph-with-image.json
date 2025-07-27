@@ -5,12 +5,22 @@
   },
   "options": {},
   "attributes": {
+    "name": {
+      "type": "string"
+    },
     "image": {
       "type": "media",
       "multiple": false,
       "allowedTypes": [
         "images"
       ]
+    },
+    "content": {
+      "type": "customField",
+      "customField": "plugin::ckeditor5.CKEditor",
+      "options": {
+        "preset": "defaultHtml"
+      }
     },
     "reversed": {
       "type": "boolean",
@@ -19,13 +29,6 @@
     "imageLandscape": {
       "type": "boolean",
       "default": true
-    },
-    "content": {
-      "type": "customField",
-      "customField": "plugin::ckeditor5.CKEditor",
-      "options": {
-        "preset": "defaultHtml"
-      }
     }
   }
 }
