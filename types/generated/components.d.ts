@@ -53,7 +53,9 @@ export interface BlocksCardWithBackgroundImage extends Struct.ComponentSchema {
         }
       >;
     image: Schema.Attribute.Media<'images'>;
-    textAlign: Schema.Attribute.Enumeration<['left', 'center', 'right']> &
+    textAlign: Schema.Attribute.Enumeration<
+      ['left', 'center', 'right', 'justify']
+    > &
       Schema.Attribute.DefaultTo<'center'>;
   };
 }
@@ -92,6 +94,7 @@ export interface BlocksContentBlock extends Struct.ComponentSchema {
   };
   attributes: {
     content: Schema.Attribute.Blocks;
+    name: Schema.Attribute.String;
   };
 }
 
@@ -149,7 +152,6 @@ export interface BlocksHeading extends Struct.ComponentSchema {
   };
   attributes: {
     heading: Schema.Attribute.String;
-    linkId: Schema.Attribute.String;
   };
 }
 

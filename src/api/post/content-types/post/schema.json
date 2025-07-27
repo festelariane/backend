@@ -60,7 +60,9 @@
         "blocks.horizontal-ads",
         "blocks.html-content-block",
         "blocks.full-image",
-        "blocks.heading"
+        "blocks.heading",
+        "blocks.card-with-background-image",
+        "blocks.common-card-list"
       ]
     }
   }

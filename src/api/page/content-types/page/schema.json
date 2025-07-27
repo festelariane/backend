@@ -47,7 +47,9 @@
         "blocks.html-content-block",
         "blocks.our-services",
         "blocks.full-image",
-        "blocks.heading"
+        "blocks.heading",
+        "blocks.card-with-background-image",
+        "blocks.common-card-list"
       ]
     }
   }

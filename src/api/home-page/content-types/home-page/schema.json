@@ -35,7 +35,9 @@
         "blocks.paragraph-with-image",
         "blocks.content-block",
         "blocks.full-image",
-        "blocks.heading"
+        "blocks.heading",
+        "blocks.common-card-list",
+        "blocks.card-with-background-image"
       ]
     }
   }

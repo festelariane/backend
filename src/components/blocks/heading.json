@@ -7,9 +7,6 @@
   "attributes": {
     "heading": {
       "type": "string"
-    },
-    "linkId": {
-      "type": "string"
     }
   }
 }

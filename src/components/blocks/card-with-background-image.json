@@ -26,7 +26,8 @@
       "enum": [
         "left",
         "center",
-        "right"
+        "right",
+        "justify"
       ]
     },
     "htmlContent": {

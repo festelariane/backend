@@ -510,6 +510,8 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
         'blocks.content-block',
         'blocks.full-image',
         'blocks.heading',
+        'blocks.common-card-list',
+        'blocks.card-with-background-image',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;
@@ -555,6 +557,8 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
         'blocks.our-services',
         'blocks.full-image',
         'blocks.heading',
+        'blocks.card-with-background-image',
+        'blocks.common-card-list',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;
@@ -598,6 +602,8 @@ export interface ApiPostPost extends Struct.CollectionTypeSchema {
         'blocks.html-content-block',
         'blocks.full-image',
         'blocks.heading',
+        'blocks.card-with-background-image',
+        'blocks.common-card-list',
       ]
     >;
     categories: Schema.Attribute.Relation<

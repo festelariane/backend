@@ -5,6 +5,9 @@
   },
   "options": {},
   "attributes": {
+    "name": {
+      "type": "string"
+    },
     "content": {
       "type": "blocks"
     }
